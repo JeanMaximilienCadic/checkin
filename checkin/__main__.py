@@ -5,13 +5,13 @@ import argparse
 
 if __name__=="__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--date_goal", 
+    parser.add_argument("date_goal", 
                         help="eg: 2022/08/20 14:21")
     parser.add_argument("--text", 
                         default=None,
                         help="eg: Back to working now.")
-    args = parser.parse_arg()
-    date_goal = args["date_goal"]
+    args = parser.parse_args()
+    date_goal = args.date_goal
     delta = datetime.strptime(date_goal, "%Y/%m/%d %H:%M")-datetime.now()
 
     # Setup the position on a checkin button
@@ -39,7 +39,7 @@ if __name__=="__main__":
     # Teams - Input text in the text field (if no text paste from the clipboard)
     pyautogui.moveTo(position_text)
     pyautogui.click()
-    if args["text"] is None:
+    if args.text is None:
         pyautogui.hotkey("ctrl", "v")
     else:
         pyautogui.write(args.text)

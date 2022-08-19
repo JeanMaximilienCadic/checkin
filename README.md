@@ -24,7 +24,7 @@ setup(
     python_requires='>=3.6',
     install_requires=[r.rsplit()[0] for r in open("requirements.txt")],
     author_email='git@cadic.jp',
-    description='GNU Tools for python',
+    description='Checkin tool for python',
     classifiers=[
         "Programming Language :: Python :: 3.6",
         "License :: OSI Approved :: MIT License",
@@ -42,5 +42,5 @@ pip install dist/*.whl
 
 ### Run the main file
 ```
-python -m checkin --data_goal 2022/08/20 6:21
+python -m checkin "2020/08/19 11:34"
 ```
